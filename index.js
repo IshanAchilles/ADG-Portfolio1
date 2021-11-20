@@ -1,28 +1,3 @@
-class Navbar {
-  constructor(target, menu) {
-    if (target instanceof HTMLElement && menu instanceof HTMLElement) {
-      this.btn = target;
-      this.menu = menu;
-
-      this.btn.addEventListener("click", () => {
-        this.open();
-      });
-    } else {
-      throw new TypeError(
-        "The Target and Menu arguments must be a DOM element."
-      );
-    }
-  }
-  open() {
-    if (this.isopen) {
-      this.menu.classList.add("nav-hidden");
-    } else {
-      this.menu.classList.remove("nav-hidden");
-    }
-
-    this.isopen = !this.isopen;
-  }
-}
 var box1 = document.querySelector(".box1");
 var box2 = document.querySelector(".box2");
 var box3 = document.querySelector(".box3");
@@ -33,9 +8,9 @@ var ro2 = document.querySelector(".ro2");
 var nav_part = document.querySelector(".nav-part");
 var card_part = document.querySelector(".card-part");
 var card_part2 = document.querySelector(".card-part2");
-var BigName = document.querySelector(".Big-Name");
-var job = document.querySelector(".line1");
-var picture=document.querySelector(".picture");
+var landing = document.querySelector(".landing");
+// var job = document.querySelector(".line1");
+var picture = document.querySelector(".picture");
 var car = document.querySelector(".car");
 
 fetch("./file.json")
@@ -44,6 +19,11 @@ fetch("./file.json")
   })
   .then((result) => {
     result.map((item) => {
+      landing.innerHTML +=
+        '<div class="top-container"><div class=top-container-text> Hello</div> <div class="NameStart"><h1>Hey! I Am</h1></div><div class="Sizing"><div class="Big-Name"><div class="wrapper"><div><ul class="dynamic-txts"><li><span>'+item.BigName1+'</span></li><li><span>'+item.BigName2+'</span></li></ul></div> </div></div> <div class="line1">' +
+        item.line1 +
+        '</div><div class=hire-but><button class="button" style="vertical-align:middle"><span>Hire Me </span></button></div></div> <div class="picture" data-aos="fade-left"><img src="shamsbhaiya.png" class="image1"> </div>';
+
       box1.innerHTML +=
         '<div class="box_info"><img src=' +
         item.box1img +
@@ -96,10 +76,8 @@ fetch("./file.json")
         '</span></a ><a class="link"  onclick="two()"><span class="other-navigate">' +
         item.otherNavigate +
         "</span></a></span></p>";
-      BigName.innerHTML +=
-        "<h1>" + item.BigName1 + "</h1><h1>" + item.BigName2 + "</h1>";
-      job.innerHTML += "<span>" + item.work + "</span>";
-      picture.innerHTML += '<img src="' + item.srcshams + '" class="image1">';
+
+      // picture.innerHTML += '<img src="' + item.srcshams + '" class="image1">';
       car.innerHTML +=
         '<div class="car1" data-aos="fade-left"><img src="' +
         item.src1 +
@@ -113,7 +91,7 @@ fetch("./file.json")
 
       for (var i = 0; i < item.cards.length / 2; i++) {
         card_part.innerHTML +=
-          '<div class="float-container"><div class="card1 float-child"><div class="card-data"><p class="card-desc">' +
+          '<div class="float-container" data-aos="fade-out"><div class="card1 float-child"><div class="card-data"><p class="card-desc">' +
           item.cards[i].cardDesc +
           '</p><p class="card-desc-sec">' +
           item.cards[i].cardDescSec +
@@ -129,7 +107,7 @@ fetch("./file.json")
       }
       for (var i = item.cards.length / 2; i < item.cards.length; i++) {
         card_part.innerHTML +=
-          '<div class="float-container2"><div class="card1 float-child"><div class="card-data"><p class="card-desc">' +
+          '<div class="float-container2" data-aos="fade-out"><div class="card1 float-child"><div class="card-data"><p class="card-desc">' +
           item.cards[i].cardDesc +
           '</p><p class="card-desc-sec">' +
           item.cards[i].cardDescSec +
@@ -146,7 +124,7 @@ fetch("./file.json")
 
       for (var i = 0; i < item.cardsWeb.length / 2; i++) {
         card_part2.innerHTML +=
-          '<div class="float-container"><div class="card1 float-child"><div class="card-data"><p class="card-desc">' +
+          '<div class="float-container" data-aos="fade-out"><div class="card1 float-child"><div class="card-data"><p class="card-desc">' +
           item.cardsWeb[i].cardDesc +
           '</p><p class="card-desc-sec">' +
           item.cardsWeb[i].cardDescSec +
@@ -162,7 +140,7 @@ fetch("./file.json")
       }
       for (var i = item.cardsWeb.length / 2; i < item.cardsWeb.length; i++) {
         card_part2.innerHTML +=
-          '<div class="float-container2"><div class="card1 float-child"><div class="card-data"><p class="card-desc">' +
+          '<div class="float-container2" data-aos="fade-out"><div class="card1 float-child"><div class="card-data"><p class="card-desc">' +
           item.cardsWeb[i].cardDesc +
           '</p><p class="card-desc-sec">' +
           item.cardsWeb[i].cardDescSec +
@@ -209,8 +187,7 @@ function one() {
 //     for(let i=0;i<skills.length; i++){
 //     skills[i].style.animation="anim"+(i+1)+ " 1s linear forwards";
 //     }
-    
-    
+
 //     let number= document.getElementsByClassName("percentage");
 //     const percentage=[95, 90 , 70, 50];
 //     let counter=0;
@@ -218,7 +195,7 @@ function one() {
 //         if(counter == 95 ){
 //             clearInterval();
 //         }
-       
+
 //     else{
 //         counter += 1;
 //         for (let i = 0; i < number.length; i++) {
@@ -229,12 +206,9 @@ function one() {
 //           }
 //         }
 //     }, 12);
-    
+
 // }
 // });
-
-
-
 
 // //Function for forward card move
 // let cards= document.getElementsByClassName("cards");
@@ -296,7 +270,7 @@ function one() {
 // }
 
 // const moveSlide = (currentSlide,siblingSlide) => {
-       
+
 //         let amountToMove=siblingSlide.style.left;
 //         slides.style.transform='translateX(-' + amountToMove + ')';
 //         currentSlide.classList.remove('current');
@@ -309,7 +283,7 @@ function one() {
 
 //     console.log("txt-",scrollbar);
 // const movebarforward = () =>{
-    
+
 //     counter+=1;
 //     let amountToMove=116*counter;
 //     scrollbar.style.transform='translateX(+' + amountToMove +'px' + ')';
@@ -317,7 +291,7 @@ function one() {
 // const movebarbackward = () =>{
 //     counter-=1;
 //     let amountToMove=116*counter;
-    
+
 //     scrollbar.style.transform='translateX(+' + amountToMove +'px' + ')';
 // }
 // //move card forward
@@ -337,5 +311,3 @@ function one() {
 //         buttonInactive(prevSibling);
 //         movebarbackward();
 // });
-
-    

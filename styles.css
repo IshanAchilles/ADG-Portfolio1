@@ -177,6 +177,15 @@ header {
   text-align: center;
   font-weight: 700;
 }
+.container{
+  margin-left:50px;
+}
+.child{
+  float:left;
+}
+.love{
+  margin:10px auto 10px 800px;
+}
 nav ul {
   margin: 0;
   list-style: none;
@@ -213,12 +222,12 @@ nav li :hover::after {
   width: 60%;
   transition: all ease-in-out 250ms;
 }
-
+.footylist{
+ width:600px;
+}
 footer {
   width: 100%;
-  text-align: left;
   font-weight: 700;
-  padding: 1rem;
   margin-top: auto;
 }
 .navb {
@@ -226,18 +235,26 @@ footer {
   width: 100%;
   margin: 0 0 0 0;
 }
+.endingline{
 
+}
+.copyright{
+  text-align:center;
+  margin: 35px auto 35px auto;
+  
+}
 .top-container {
   display: inline-block;
   text-align: left;
   position: relative;
   margin-top: 8rem;
   margin-left: 10rem;
-  margin-bottom: 2rem;
+  margin-bottom: 5rem;
+
 }
 
 .top-container-text {
-  font-size: 1.5rem;
+  font-size: 1.1rem;
   line-height: 1.8125rem;
   color: #652cdf;
 }
@@ -250,20 +267,77 @@ footer {
   background: #652cdf;
   top: 4.9%;
   position: relative;
-  margin-bottom: 0.5rem;
+  margin-bottom: 0.3rem;
 }
-.Big-Name {
+.NameStart{
   position: relative;
   font-size: 2.25rem;
-  line-height: 2.5rem;
+  line-height: 2.25rem;
   margin: 0.125rem;
   color: #ffffff;
 }
+.Big-Name {
+    top:2rem;
+    position:relative ;
+    font-size: 3.5rem;
+    line-height: 3rem;
+    margin: 0.125rem;
+    color:#FFFFFF;
+    font-weight: 700;
+  }   
+   
+  .wrapper{
+    display: flex;
+  }
+  .wrapper .dynamic-txts{
+    height: 90px;
+    line-height: 90px;
+    overflow: hidden;
+  }
+  .dynamic-txts li{
+    list-style: none;
+    color: #FFF;
+    /* font-size: 60px; */
+    /* font-weight: 700; */
+    /* position: relative; */
+    top: 0;
+    animation: slide 12s steps(4) infinite;
+  }
+  @keyframes slide {
+    100%{
+      top: -360px;
+    }
+  }
+  .dynamic-txts li span{
+    position: relative;
+  
+    line-height: 90px;
+  }
+  .dynamic-txts li span::after{
+    content: "";
+    position: absolute;
+    left: 0;
+    height: 100%;
+    width: 100%;
+    background: #0C0A10;
+    border-left: 2px solid #652CDF;
+    animation: typing 3s steps(10) infinite;
+  }
+  @keyframes typing {
+    40%, 60%{
+      left: calc(100% + 30px);
+    }
+    100%{
+      left: 0;
+    }
+  }
 .line1 {
   position: relative;
   font-size: 1.125rem;
   line-height: 1.25rem;
+  padding-top:7rem;
   color: #40514e;
+  padding-bottom:0.5rem;
 }
 .button {
   display: inline-block;
@@ -303,13 +377,22 @@ footer {
 }
 .landing {
   display: flex;
+  margin-bottom: 100px;
+  
 }
 .image1 {
   position: relative;
   width: 21rem;
   height: 21.875rem;
   margin-top: 11rem;
-  margin-left: 11rem;
+  margin-left: 20rem;
+  
+}
+.love{
+  position: relative;
+  left:2.5rem;
+  right: 2.5rem;
+  bottom:2rem;
 }
 
 @media (max-width: 1049px) {
@@ -553,13 +636,15 @@ footer {
     
 }
 
-
+.car{
+  padding-top:200px;
+}
 .car1 {
     position:absolute;
     width:250px;
     height:165px;
     left:685px;
-    top:1099px;
+    top: 1320px;
     background:#131118;
     border-radius:6px;
     
@@ -578,7 +663,7 @@ footer {
     width:221px;
     height:328px;
     left:950px;
-    top:1098px;
+    top:1320px;
     background:#131118;
     border-radius:6px;
 }
@@ -596,7 +681,7 @@ footer {
     width:221px;
     height:328px;
     left:713px;
-    top:1278px;
+    top:1500px;
     background:#131118;
     border-radius:6px;
 }
@@ -614,7 +699,7 @@ footer {
     width:221px;
     height:260px;
     left:950px;
-    top:1440px;
+    top:1660px;
     background:#131118;
     border-radius:6px;
     
@@ -816,14 +901,12 @@ footer {
     padding: 0px;
    
 }
-
 body{
     background: #0C0A10;
     height: 100vh;
 }
  .header{
 position: relative;
-
 }
 .header{
     font-family: Inter;
@@ -832,10 +915,8 @@ position: relative;
     font-size: 18px;
     line-height: 22px;
 }
-
 .line{
     margin:0;
-
 }
 .line::before{
 content: "";
@@ -861,7 +942,6 @@ position: absolute;
     width: 603px;
     overflow: hidden;     
 }
-
 .cards{
 position: absolute;
 height:100%;
@@ -884,7 +964,6 @@ margin-top: 20px;
 margin-top:18px ;
 }
 #Company-Name{
-
     font-family: Inter;
 font-style: normal;
 font-weight: bold;
@@ -893,7 +972,6 @@ line-height: 29px;
 margin-top: 70px;
 color: #858487;
 }
-
 .purple{
     font-family: Inter;
     font-style: normal;
@@ -905,7 +983,6 @@ color: #858487;
     
 font-size: 24px;
 line-height: 29px;
-
 margin-top: 5px;
 }
 .details{
@@ -999,7 +1076,6 @@ svg .inner-circle{
    top:28.54px;
    font-size: 36px;
 line-height: 45px;
-
 }
 #skillname{
     top:74.29px;
@@ -1105,7 +1181,6 @@ border-radius: 6px;
     font-size: 18px;
     line-height: 22px;
 }
-
 @media only screen and (max-width:480px) {
    *{
         margin:auto;
@@ -1118,10 +1193,8 @@ border-radius: 6px;
         margin: auto;
         width: 90%;
         align-items: center;
-
     }
    
-
     .contactMe{
         width: 100%;
         flex-direction: column;
@@ -1139,4 +1212,3 @@ border-radius: 6px;
         padding: 10%;
     }
 } */
-   
