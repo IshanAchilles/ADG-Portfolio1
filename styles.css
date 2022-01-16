@@ -177,15 +177,6 @@ header {
   text-align: center;
   font-weight: 700;
 }
-.container{
-  margin-left:50px;
-}
-.child{
-  float:left;
-}
-.love{
-  margin:10px auto 10px 800px;
-}
 nav ul {
   margin: 0;
   list-style: none;
@@ -222,12 +213,12 @@ nav li :hover::after {
   width: 60%;
   transition: all ease-in-out 250ms;
 }
-.footylist{
- width:600px;
-}
+
 footer {
   width: 100%;
+  text-align: left;
   font-weight: 700;
+  padding: 1rem;
   margin-top: auto;
 }
 .navb {
@@ -235,26 +226,18 @@ footer {
   width: 100%;
   margin: 0 0 0 0;
 }
-.endingline{
 
-}
-.copyright{
-  text-align:center;
-  margin: 35px auto 35px auto;
-  
-}
 .top-container {
   display: inline-block;
   text-align: left;
   position: relative;
   margin-top: 8rem;
   margin-left: 10rem;
-  margin-bottom: 5rem;
-
+  margin-bottom: 2rem;
 }
 
 .top-container-text {
-  font-size: 1.1rem;
+  font-size: 1.5rem;
   line-height: 1.8125rem;
   color: #652cdf;
 }
@@ -267,77 +250,55 @@ footer {
   background: #652cdf;
   top: 4.9%;
   position: relative;
-  margin-bottom: 0.3rem;
-}
-.NameStart{
-  position: relative;
-  font-size: 2.25rem;
-  line-height: 2.25rem;
-  margin: 0.125rem;
-  color: #ffffff;
+  margin-bottom: 0.5rem;
 }
 .Big-Name {
-    top:2rem;
-    position:relative ;
-    font-size: 3.5rem;
-    line-height: 3rem;
-    margin: 0.125rem;
-    color:#FFFFFF;
-    font-weight: 700;
-  }   
-   
-  .wrapper{
-    display: flex;
-  }
-  .wrapper .dynamic-txts{
-    height: 90px;
-    line-height: 90px;
-    overflow: hidden;
-  }
-  .dynamic-txts li{
-    list-style: none;
-    color: #FFF;
-    /* font-size: 60px; */
-    /* font-weight: 700; */
-    /* position: relative; */
-    top: 0;
-    animation: slide 12s steps(4) infinite;
-  }
-  @keyframes slide {
-    100%{
-      top: -360px;
-    }
-  }
-  .dynamic-txts li span{
-    position: relative;
+  position: relative;
+  font-size: 2.25rem;
+  line-height: 2.5rem;
+  color: #ffffff;
+}
+ .picture {
+  animation: picture ease-in-out 1s infinite alternate;
+  transform-origin: center -20px;
+  float:left;
+ 
+}
+.picture img {
+  border: 5px solid #f8f8f8;
+  display: block;
+}
+.picture:after{
+  content: '';
+  position: absolute;  
+  width: 20px; height: 20px;  
+  border: 1px solid #999;
+  top: -10px; left: 50%;
+  z-index: 0;
+  border-bottom: none;
+  border-right: none;
+  transform: rotate(45deg);
+} 
+/* nail */
+.picture:before{
+  content: '';
+  position: absolute;
+  width: 5px; height: 5px;
+  top: -14px;left: 54%;
+  z-index: 5;
   
-    line-height: 90px;
-  }
-  .dynamic-txts li span::after{
-    content: "";
-    position: absolute;
-    left: 0;
-    height: 100%;
-    width: 100%;
-    background: #0C0A10;
-    border-left: 2px solid #652CDF;
-    animation: typing 3s steps(10) infinite;
-  }
-  @keyframes typing {
-    40%, 60%{
-      left: calc(100% + 30px);
-    }
-    100%{
-      left: 0;
-    }
-  }
+  background: #000;
+}
+
+@keyframes picture {
+  0% { transform: rotate(3deg); }
+  100% { transform: rotate(-3deg); }
+} */
 .line1 {
   position: relative;
   font-size: 1.125rem;
   line-height: 1.25rem;
-  padding-top:7rem;
   color: #40514e;
-  padding-bottom:0.5rem;
 }
 .button {
   display: inline-block;
@@ -377,22 +338,13 @@ footer {
 }
 .landing {
   display: flex;
-  margin-bottom: 100px;
-  
 }
 .image1 {
   position: relative;
   width: 21rem;
   height: 21.875rem;
   margin-top: 11rem;
-  margin-left: 20rem;
-  
-}
-.love{
-  position: relative;
-  left:2.5rem;
-  right: 2.5rem;
-  bottom:2rem;
+  margin-left: 11rem;
 }
 
 @media (max-width: 1049px) {
@@ -896,27 +848,18 @@ footer {
       
             /*Satyam Part*/
 
-/* *{
-    margin: 0px;
-    padding: 0px;
-   
-}
-body{
-    background: #0C0A10;
-    height: 100vh;
-}
- .header{
-position: relative;
-}
-.header{
+.S-header{
+  position: relative;
     font-family: Inter;
     font-style: normal;
     font-weight: bold;
     font-size: 18px;
     line-height: 22px;
 }
+
 .line{
     margin:0;
+
 }
 .line::before{
 content: "";
@@ -942,6 +885,7 @@ position: absolute;
     width: 603px;
     overflow: hidden;     
 }
+
 .cards{
 position: absolute;
 height:100%;
@@ -959,11 +903,13 @@ font-size: 33px;
 line-height: 40px;
 margin-top: 20px;
 }
+
 .contactMe .bold-heading
 {
 margin-top:18px ;
 }
 #Company-Name{
+
     font-family: Inter;
 font-style: normal;
 font-weight: bold;
@@ -972,6 +918,7 @@ line-height: 29px;
 margin-top: 70px;
 color: #858487;
 }
+
 .purple{
     font-family: Inter;
     font-style: normal;
@@ -983,6 +930,7 @@ color: #858487;
     
 font-size: 24px;
 line-height: 29px;
+
 margin-top: 5px;
 }
 .details{
@@ -1034,9 +982,7 @@ button :focus{
     flex-wrap: wrap;
     position: relative;
 }
-img{
-    margin: 0px 10px;
-}
+
 .progressbar{
     display: flex;
     justify-content: center;
@@ -1076,6 +1022,7 @@ svg .inner-circle{
    top:28.54px;
    font-size: 36px;
 line-height: 45px;
+
 }
 #skillname{
     top:74.29px;
@@ -1121,9 +1068,7 @@ line-height: 45px;
     text-align: center;
     margin: auto;
 }
-.personalInfo img{
- 
-}
+
 .logos{
     display: inline-block;
     width: 35px;
@@ -1140,6 +1085,10 @@ line-height: 24px;
 color: #858487;
 margin-top: 27px;
 }
+.icons{
+  position:relative; 
+  top: 10px;
+}
 .form{
     width: 376px;
 }
@@ -1154,7 +1103,7 @@ line-height: 22px;
 background: #131118;
 border-radius: 6px;
 border: none;
-padding: 33px;
+padding: 23px;
 color: #858487;
 }
 #form-email{
@@ -1181,34 +1130,3 @@ border-radius: 6px;
     font-size: 18px;
     line-height: 22px;
 }
-@media only screen and (max-width:480px) {
-   *{
-        margin:auto;
-        
-    }
-    body{
-        background-color: rgb(154, 236, 209);
-    }
-    .Experiences{
-        margin: auto;
-        width: 90%;
-        align-items: center;
-    }
-   
-    .contactMe{
-        width: 100%;
-        flex-direction: column;
-        margin: 0;
-    }
-    
-    .contactDetails{
-        width: 100%;
-    }
-    .form{
-        width:100%;
-    }
-    .form-elements{
-        width: 80%;
-        padding: 10%;
-    }
-} */

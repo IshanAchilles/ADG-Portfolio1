@@ -19,11 +19,15 @@ fetch("./file.json")
   })
   .then((result) => {
     result.map((item) => {
+      // landing.innerHTML +=
+      //   '<div class="top-container"><div class=top-container-text> Hello</div> <div class="NameStart"><h1>Hey! I Am</h1></div><div class="Sizing"><div class="Big-Name"><div class="wrapper"><div><ul class="dynamic-txts"><li><span>'+item.BigName1+'</span></li><li><span>'+item.BigName2+'</span></li></ul></div> </div></div> <div class="line1">' +
+      //   item.line1 +
+      //   '</div><div class=hire-but><button class="button" style="vertical-align:middle"><span>Hire Me </span></button></div></div> <div class="picture" data-aos="fade-left"><img src="shamsbhaiya.png" class="image1"> </div>';
       landing.innerHTML +=
-        '<div class="top-container"><div class=top-container-text> Hello</div> <div class="NameStart"><h1>Hey! I Am</h1></div><div class="Sizing"><div class="Big-Name"><div class="wrapper"><div><ul class="dynamic-txts"><li><span>'+item.BigName1+'</span></li><li><span>'+item.BigName2+'</span></li></ul></div> </div></div> <div class="line1">' +
-        item.line1 +
-        '</div><div class=hire-but><button class="button" style="vertical-align:middle"><span>Hire Me </span></button></div></div> <div class="picture" data-aos="fade-left"><img src="shamsbhaiya.png" class="image1"> </div>';
-
+      '<div class="top-container"><div class=top-container-text> Hello</div><div class="Big-Name the-type"><h1>'+item.Intro1+'</h1><h1>'+item.BigName1+'</h1> </div>' +
+      '<div class="line1"><span>'+item.line1+'</span></div><button class="button" style="vertical-align:middle"><span>Hire Me </span></button></div><div class="picture">' +
+      '<img src="'+item.srcshams+'" width="200" class="image1"></div>'
+      
       box1.innerHTML +=
         '<div class="box_info"><img src=' +
         item.box1img +
@@ -175,139 +179,143 @@ function one() {
 //Satyam's Part
 
 //Function for skill percentage
-// var stop=0;
-// window.addEventListener('scroll', () => {
-// let scrollable= document.documentElement.scrollHeight- window.innerHeight;
-// const scrolled=window.scrollY;
+var stop=0;
+window.addEventListener('scroll', () => {
+let scrollable= 3000;
+const scrolled=window.scrollY;
 
-// if(Math.ceil(scrolled)>=scrollable && stop==0)
-// {
-//     stop=1;
-//     let skills=document.getElementsByClassName('inner-circle');
-//     for(let i=0;i<skills.length; i++){
-//     skills[i].style.animation="anim"+(i+1)+ " 1s linear forwards";
-//     }
+if(Math.ceil(scrolled)>=scrollable && stop==0)
+{
+    stop=1;
+    let skills=document.getElementsByClassName('inner-circle');
+    for(let i=0;i<skills.length; i++){
+    skills[i].style.animation="anim"+(i+1)+ " 1s linear forwards";
+    }
+    
+    
+    let number= document.getElementsByClassName("percentage");
+    const percentage=[95, 90 , 70, 50];
+    let counter=0;
+    setInterval(() => {
+        if(counter == 95 ){
+            clearInterval();
+        }
+       
+    else{
+        counter += 1;
+        for (let i = 0; i < number.length; i++) {
+            if(counter<=percentage[i])
+            {
+            number[i].innerHTML = counter + "%";
+            }
+          }
+        }
+    }, 12);
+    
+}
+});
 
-//     let number= document.getElementsByClassName("percentage");
-//     const percentage=[95, 90 , 70, 50];
-//     let counter=0;
-//     setInterval(() => {
-//         if(counter == 95 ){
-//             clearInterval();
-//         }
 
-//     else{
-//         counter += 1;
-//         for (let i = 0; i < number.length; i++) {
-//             if(counter<=percentage[i])
-//             {
-//             number[i].innerHTML = counter + "%";
-//             }
-//           }
-//         }
-//     }, 12);
 
-// }
-// });
 
-// //Function for forward card move
-// let cards= document.getElementsByClassName("cards");
-// const slideWidth=cards[0].getBoundingClientRect().width;
-// let slides=document.querySelector('.card-container');
-// let forward=document.querySelector('.forward');
-// let backward=document.querySelector('.backward');
+//Function for forward card move
+let cards= document.getElementsByClassName("cards");
+const slideWidth=cards[0].getBoundingClientRect().width;
+let slides=document.querySelector('.card-container');
+let forward=document.querySelector('.forward');
+let backward=document.querySelector('.backward');
 
-// for(let i = 0; i < cards.length; i++)
-// {
-//     cards[i].style.left= slideWidth* i + 'px';
-// };
+for(let i = 0; i < cards.length; i++)
+{
+    cards[i].style.left= slideWidth* i + 'px';
+};
 
-// //change button color
-// const imageChange= (sibling) => {
-//     let forwardArrow=document.querySelector('#forward-arrow');
-//     let backwardArrow=document.querySelector('#backward-arrow');
-//     let nextSlide=sibling.nextElementSibling;
-//     let prevSlide=sibling.previousElementSibling
-//     if(nextSlide==null)
-//     {
-//         forwardArrow.src='images/Gray-forward arrow.svg'
-//     }
-//     else
-//     {
-//         forwardArrow.src='images/Purple-forward arrow.svg'
-//     }
-//     if(prevSlide!=null)
-//     {
-//         backwardArrow.src='images/Purple-back arrow.svg'
-//     }
-//     else{
-//         backwardArrow.src='images/Gray-back arrow.svg'
-//     }
-// }
+//change button color
+const imageChange= (sibling) => {
+    let forwardArrow=document.querySelector('#forward-arrow');
+    let backwardArrow=document.querySelector('#backward-arrow');
+    let nextSlide=sibling.nextElementSibling;
+    let prevSlide=sibling.previousElementSibling
+    if(nextSlide==null)
+    {
+        forwardArrow.src='images/Gray-forward arrow.svg'
+    }
+    else
+    {
+        forwardArrow.src='images/Purple-forward arrow.svg'
+    }
+    if(prevSlide!=null)
+    {
+        backwardArrow.src='images/Purple-back arrow.svg'
+    }
+    else{
+        backwardArrow.src='images/Gray-back arrow.svg'
+    }
+}
 
-// //inactive buttons for corner slides
-// const buttonInactive=(sibling)=>{
-//     let nextSlide=sibling.nextElementSibling;;
-//     let prevSlide=sibling.previousElementSibling
-// if(nextSlide== null)
-// {
-//     forward.disabled=true;
-//     forward.style.cursor='default';
-// }
-// else{
-//     forward.disabled=false;
-//     forward.style.cursor='pointer';
-// }
-// if(prevSlide==null)
-// {
-//     backward.disabled=true;
-//     backward.style.cursor='default';
-// }
-// else{
-//     backward.disabled=false;
-//     backward.style.cursor='pointer';
-// }
-// }
+//inactive buttons for corner slides
+const buttonInactive=(sibling)=>{
+    let nextSlide=sibling.nextElementSibling;;
+    let prevSlide=sibling.previousElementSibling
+if(nextSlide== null)
+{
+    forward.disabled=true;
+    forward.style.cursor='default';
+}
+else{
+    forward.disabled=false;
+    forward.style.cursor='pointer';
+}
+if(prevSlide==null)
+{
+    backward.disabled=true;
+    backward.style.cursor='default';
+}
+else{
+    backward.disabled=false;
+    backward.style.cursor='pointer';
+}
+}
 
-// const moveSlide = (currentSlide,siblingSlide) => {
+const moveSlide = (currentSlide,siblingSlide) => {
+       
+        let amountToMove=siblingSlide.style.left;
+        slides.style.transform='translateX(-' + amountToMove + ')';
+        currentSlide.classList.remove('current');
+        siblingSlide.classList.add('current');
+        imageChange(siblingSlide);
+    }
+    let counter=0;
+    let scrollbar= document.querySelector('.nav-scroll');
+   /* let widthToMove=scrollbar.style.width.value;*/
 
-//         let amountToMove=siblingSlide.style.left;
-//         slides.style.transform='translateX(-' + amountToMove + ')';
-//         currentSlide.classList.remove('current');
-//         siblingSlide.classList.add('current');
-//         imageChange(siblingSlide);
-//     }
-//     let counter=0;
-//     let scrollbar= document.querySelector('.nav-scroll');
-//    /* let widthToMove=scrollbar.style.width.value;*/
+    console.log("txt-",scrollbar);
+const movebarforward = () =>{
+    
+    counter+=1;
+    let amountToMove=116*counter;
+    scrollbar.style.transform='translateX(+' + amountToMove +'px' + ')';
+}
+const movebarbackward = () =>{
+    counter-=1;
+    let amountToMove=116*counter;
+    
+    scrollbar.style.transform='translateX(+' + amountToMove +'px' + ')';
+}
+//move card forward
+forward.addEventListener('click',()=>{
+    let current = document.querySelector('.current');
+    let nextSibling = current.nextElementSibling;
+    moveSlide(current,nextSibling);
+    buttonInactive(nextSibling);
+    movebarforward();
+});
 
-//     console.log("txt-",scrollbar);
-// const movebarforward = () =>{
-
-//     counter+=1;
-//     let amountToMove=116*counter;
-//     scrollbar.style.transform='translateX(+' + amountToMove +'px' + ')';
-// }
-// const movebarbackward = () =>{
-//     counter-=1;
-//     let amountToMove=116*counter;
-
-//     scrollbar.style.transform='translateX(+' + amountToMove +'px' + ')';
-// }
-// //move card forward
-// forward.addEventListener('click',()=>{
-//     let current = document.querySelector('.current');
-//     let nextSibling = current.nextElementSibling;
-//     moveSlide(current,nextSibling);
-//     buttonInactive(nextSibling);
-//     movebarforward();
-// });
-
-// //Move card backwards
-// backward.addEventListener('click',()=>{
-//         let current = document.querySelector('.current');
-//         let prevSibling = current.previousElementSibling;
-//         moveSlide(current,prevSibling);
-//         buttonInactive(prevSibling);
-//         movebarbackward();
-// });
+//Move card backwards
+backward.addEventListener('click',()=>{
+        let current = document.querySelector('.current');
+        let prevSibling = current.previousElementSibling;
+        moveSlide(current,prevSibling);
+        buttonInactive(prevSibling);
+        movebarbackward();
+});
